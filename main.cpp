@@ -12,15 +12,11 @@ int main()
 	MySet c("C");
 	c.add(a);
 	c.add(b);
-	cout << "a:" << a << endl;
-	cout << "b:" << b << endl;
-	cout << "c:" << c << endl;
+	MySet d("D");
+	d.add(a);
+	d.add(c);
+	cout << c+d;
 	
-	cout << "a - b :"<< (a - b).name << a - b << endl;
-	cout << "b - a :" << b - a << endl;
-	cout << "c - a :" << c - a << endl;
-	cout << c.remove(a) << endl;
-	cout << a.add("pear");
 	system("pause");
 	return 0;
 }
