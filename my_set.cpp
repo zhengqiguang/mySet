@@ -12,7 +12,6 @@ ostream& operator<<(ostream& cout, const MySet& e)
 		cout << "\b\b}";
 		return cout;
 	}
-
 	else if (!e.isbasic && !e.element && e.set)
 	{
 		cout << "{ ";
@@ -22,28 +21,29 @@ ostream& operator<<(ostream& cout, const MySet& e)
 		}
 		cout << "\b\b }";
 	}
-
 	return cout;
 }
 
-void MySet::add(const string& elementName)
+MySet MySet::add(const string& elementName)
 {
 	if (set)
-		return;
+		return *this;
 	if (!element)
 		element = new std::set<string>();
 	isbasic = true;
 	element->insert(elementName);
+	return *this;
 }
 
-void MySet::add(const MySet newSet)
+MySet MySet::add(const MySet& newSet)
 {
 	if (element)
-		return;
+		return *this;
 	if (!set)
 		set = new std::set<MySet>();
 	isbasic = false;
 	set->insert(newSet);
+	return *this;
 }
 
 int MySet::size() const
@@ -56,28 +56,20 @@ bool MySet::isEmpty() const
 	return (element == 0 && set == 0) || (element != 0 && element -> size() == 0) || (set != 0 && set -> size() == 0);
 }
 
-MySet::~MySet()
-{/*
-	if (element)
-		delete element;
-	else if (set)
-		delete set;
-		*/
+MySet MySet::remove(string name)
+{
+	this->element->erase(name);
+	return *this;
 }
 
-void MySet::remove(string name)
+MySet MySet::remove(MySet & s)
 {
-	for (auto& it : *this->element)
-	{
-		
-	}
-	this->element->erase(name);
+	this->set->erase(s);
+	return *this;
 }
 
 MySet & MySet::operator=(const MySet & s)
 {
-	// TODO: 在此处插入 return 语句
-//	this->name = s.name;
 	if(s.element)
 		*this->element = *s.element;
 	if(s.set)
@@ -89,25 +81,18 @@ MySet & MySet::operator=(const MySet & s)
 MySet MySet::operator-(const string & name)
 {
 	MySet s(*this ,this -> name + " - \"" + name + "\"");
-//	s.element = new std::set<string>;
-
-//	s = *this;
-
 	s.element->erase(name);
-//	s.name = this->name + " - " + name;
 	return s;
 }
 
 MySet MySet::operator-(const MySet & set)
 {
-	MySet s;
-	if (this->element)
-		s.element = new std::set <string>;
-	if(this ->set)
-		s.set = new std::set <MySet>;
-	s = *this;
+	MySet s(*this, this->name + " - " + set.name);
+
 	if (!set.set && set.element)
 	{
+		if (!this->isbasic)
+			return s;
 		for (auto it : *set.element)
 		{
 			s = s - it;
@@ -122,7 +107,7 @@ MySet MySet::operator-(const MySet & set)
 		}
 		return s;
 	}
-	return 0;
+	return s;
 }
 
 bool MySet::operator<(const MySet& s) const

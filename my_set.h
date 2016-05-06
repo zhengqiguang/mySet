@@ -17,8 +17,14 @@ protected:
 	set<MySet>* set = 0;
 	bool isbasic;
 	
-	MySet(MySet s, string name) : MySet(name)
-	{ 
+	
+public:
+	const string name;
+
+	MySet(): id(count++){}
+	MySet(string name) : name(name), id(count++){}
+	MySet(const MySet s, string name) : MySet(name)
+	{
 		this->isbasic = s.isbasic;
 		if (s.element)
 		{
@@ -31,24 +37,20 @@ protected:
 			*this->set = *s.set;
 		}
 	}
-public:
-	const string name;
 
-	MySet(): id(count++){}
-	MySet(string name) : name(name), id(count++){}
-	
+	MySet add(const string& elementName);
+	MySet add(const MySet& newSet);
+	MySet remove(string name);
+	MySet remove(MySet& s);
 
-	void add(const string& elementName);
-	void add(const MySet newSet);
 
 	bool has(string name) const;
 	bool has(MySet set) const;
 	int size() const;
 	bool isEmpty() const;
 
-	~MySet();
+	~MySet() {}
 
-	void remove(string name);
 
 	MySet& operator=(const MySet& s);
 	MySet operator-(const string& name);

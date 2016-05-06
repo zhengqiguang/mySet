@@ -50,3 +50,4 @@ Temporary Items
 *.enc
 Debug/vc140.idb
 *.pdb
+Debug/mySet.log

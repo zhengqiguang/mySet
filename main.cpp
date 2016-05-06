@@ -18,8 +18,9 @@ int main()
 	
 	cout << "a - b :"<< (a - b).name << a - b << endl;
 	cout << "b - a :" << b - a << endl;
-//	cout << "c - a :" << c - a << endl;
-
+	cout << "c - a :" << c - a << endl;
+	cout << c.remove(a) << endl;
+	cout << a.add("pear");
 	system("pause");
 	return 0;
 }
