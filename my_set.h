@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <set>
-#include <unordered_set>
 #include<string>
 
 
@@ -16,7 +15,6 @@ protected:
 	set<string>* element = 0;//指向元素为字符串的集合的指针
 	set<MySet>* set = 0;//指向元素为集合的集合的指针
 	bool isbasic;//集合元素为字符串时，为true;
-	
 	
 public:
 	const string name;//集合名，不允许修改，初始化时赋值

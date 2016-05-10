@@ -1,7 +1,10 @@
-#include "my_set.h"
+//#include "my_set.h"
+
+#include "set_template.h"
 using namespace std;
 int main()
 {
+	/*
 	MySet a("A");
 	a.add("apple");
 	a.add("banana");
@@ -16,7 +19,20 @@ int main()
 	d.add(a);
 	d.add(c);
 	cout << c+d;
+	*/
 	
+	strSet s("A");
+	s.addElement("apple");
+	s.addElement("banana");
+	s.addElement("pear");
+
+	strSet b;
+	b.addElement("banana");
+	b.addElement("orange");
+
+	cout << strSet::unionOf(s, b).size();
+	cout << strSet::intersectionOf(s,b).size();
+
 	system("pause");
 	return 0;
 }

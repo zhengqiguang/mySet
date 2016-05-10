@@ -18,6 +18,9 @@
     <ClInclude Include="my_set.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="set_template.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
