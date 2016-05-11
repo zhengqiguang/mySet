@@ -21,17 +21,16 @@ int main()
 	cout << c+d;
 	*/
 	
-	strSet s("A");
+	StrSet s;
 	s.addElement("apple");
 	s.addElement("banana");
 	s.addElement("pear");
 
-	strSet b;
+	StrSet b;
 	b.addElement("banana");
 	b.addElement("orange");
 
-	cout << strSet::unionOf(s, b).size();
-	cout << strSet::intersectionOf(s,b).size();
+	cout << s * b;
 
 	system("pause");
 	return 0;
