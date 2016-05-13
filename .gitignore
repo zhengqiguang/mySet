@@ -51,3 +51,12 @@ Temporary Items
 Debug/vc140.idb
 *.pdb
 Debug/mySet.log
+*.log
+Debug/main.nativecodeanalysis.xml
+*.xml
+Debug/mySet.log
+Debug/mySet.log
+*.log
+mySet.vcxproj.filters
+mySet.vcxproj
+Debug/mySet.log

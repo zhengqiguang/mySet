@@ -1,2 +1,14 @@
-﻿  main.cpp
-  mySet.vcxproj -> d:\documents\visual studio 2015\Projects\mySet\Debug\mySet.exe
+﻿  my_set.cpp
+  main.cpp
+d:\documents\visual studio 2015\projects\myset\myset\main.cpp(25): error C2243: “类型转换”: 从“StrSet *”到“VirSet *”的转换存在，但无法访问
+d:\documents\visual studio 2015\projects\myset\myset\main.cpp(26): error C2228: “.addElement”的左边必须有类/结构/联合
+  d:\documents\visual studio 2015\projects\myset\myset\main.cpp(26): note: 类型是“VirSet *”
+  d:\documents\visual studio 2015\projects\myset\myset\main.cpp(26): note: 是否改用“->”?
+d:\documents\visual studio 2015\projects\myset\myset\main.cpp(27): error C2228: “.addElement”的左边必须有类/结构/联合
+  d:\documents\visual studio 2015\projects\myset\myset\main.cpp(27): note: 类型是“VirSet *”
+  d:\documents\visual studio 2015\projects\myset\myset\main.cpp(27): note: 是否改用“->”?
+d:\documents\visual studio 2015\projects\myset\myset\main.cpp(28): error C2228: “.addElement”的左边必须有类/结构/联合
+  d:\documents\visual studio 2015\projects\myset\myset\main.cpp(28): note: 类型是“VirSet *”
+  d:\documents\visual studio 2015\projects\myset\myset\main.cpp(28): note: 是否改用“->”?
+d:\documents\visual studio 2015\projects\myset\myset\main.cpp(34): error C2677: 二进制“*”: 没有找到接受“StrSet”类型的全局运算符(或没有可接受的转换)
+  正在生成代码...

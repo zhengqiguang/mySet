@@ -1,5 +1,5 @@
 //#include "my_set.h"
-
+//#include"VirSet.h"
 #include "set_template.h"
 using namespace std;
 int main()
@@ -22,6 +22,7 @@ int main()
 	*/
 	
 	StrSet s;
+//	VirSet& s = new StrSet;
 	s.addElement("apple");
 	s.addElement("banana");
 	s.addElement("pear");

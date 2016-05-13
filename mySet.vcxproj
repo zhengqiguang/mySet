@@ -19,8 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cset.h" />
     <ClInclude Include="my_set.h" />
     <ClInclude Include="set_template.h" />
+    <ClInclude Include="VirSet.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
